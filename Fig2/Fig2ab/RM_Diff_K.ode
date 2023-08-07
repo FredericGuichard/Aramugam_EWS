@@ -1,0 +1,14 @@
+#Rosenzweig-MacArthur model
+v1'=r*v1*(1-v1/k)-a*v1*h1/(v1+b)
+h1'=h1*(beta*a*v1/(v1+b)-m)+d*(h2-h1)
+v2'=r*v2*(1-v2/k)-a*v2*h2/(v2+b)
+h2'=h2*(beta*a*v2/(v2+b)-m)+d*(h1-h2)
+p k=0.01
+p m=0.2,d=0.7
+p r=0.5,b=0.16,beta=0.5,a=1 
+init v1=0.2650954,v2=0.02784573,h1=0.09985685,h2=0.08869217
+@ total=500,runnow=1,BUT=quit:fq,maxstore=100000,dt=.01
+@ autoxmin=0,autoxmax=1.2,autoymin=-0.01,autoymax=0.55
+@ Ntst=150,Nmax=10000,Npr=10000,ds=0.0001,dsmin=0.00001,dsmax=0.001,parmin=0,parmax=1.2
+done
+
